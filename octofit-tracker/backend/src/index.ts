@@ -1,10 +1,10 @@
 import express from 'express';
-import { getApiBaseUrl } from './config/apiBaseUrl.js';
+import { API_PORT, getApiBaseUrl } from './config/apiBaseUrl.js';
 import db from './config/database.js';
 import apiRouter from './routes/index.js';
 
 const app = express();
-const port = Number(process.env.PORT) || 8000;
+const port = API_PORT;
 
 app.use(express.json());
 app.use('/api', apiRouter);
